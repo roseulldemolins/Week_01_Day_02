@@ -65,17 +65,17 @@ for (var coffee of coffees){
 
 
 
-var currentPlayer = 'x';
+var currentPlayer = ['x']
 var grid =[['x','x','x'], ['o', null, 'o'], [null, null, null]]
 console.log(grid[0][0])
-
-grid[0][0] && grid[0][1] && grid[0][2] ||
-grid[1][0] && grid[1][1] && grid[1][2] ||
-grid[2][0] && grid[2][1] && grid[2][2] ||
-grid[0][0] && grid[1][0] && grid[2][0] ||
-grid[0][1] && grid[1][1] && grid[2][1] ||
-grid[0][2] && grid[1][2] && grid[2][2] ||
-grid[0][0] && grid[1][1] && grid[2][2] ||
-grid[2][0] && grid[1][1] && grid[0][2]
-
-console.log("Player " + currentPlayer + " wins!");
+if(
+(grid[0][0] && grid[0][1] && grid[0][2] === currentPlayer) ||
+(grid[1][0] && grid[1][1] && grid[1][2] === currentPlayer) ||
+(grid[2][0] && grid[2][1] && grid[2][2] === currentPlayer) ||
+(grid[0][0] && grid[1][0] && grid[2][0] === currentPlayer) ||
+(grid[0][1] && grid[1][1] && grid[2][1] === currentPlayer) ||
+(grid[0][2] && grid[1][2] && grid[2][2] === currentPlayer) ||
+(grid[0][0] && grid[1][1] && grid[2][2] === currentPlayer) ||
+(grid[2][0] && grid[1][1] && grid[0][2] === currentPlayer)
+) {console.log("Player " + currentPlayer + " wins!")
+}
